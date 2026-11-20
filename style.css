@@ -44,10 +44,6 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; }
 
 
 #in { font-family: inherit; font-size: 15px; word-break: normal; }
-.check-line { margin: 0 0 12px; padding: 10px; border-radius: var(--radius); font-size: 14px; background: var(--bg2); }
-.check-line.good { color: #2e9e4f; }
-.check-line.bad, .bad { color: var(--danger); }
-.check-line.muted { color: var(--hint); }
 .bad { background: var(--bg2); padding: 10px; border-radius: var(--radius); margin: 0 0 12px; }
 button:disabled { opacity: .5; cursor: default; }
 main > button.primary { margin-bottom: 12px; }
