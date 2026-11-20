@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Страница не может делать сетевые запросы (connect-src 'none'). -->
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' https://telegram.org 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Шифратор</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="vendor/sodium.js"></script>
+<script src="keys.js"></script>
+</head>
+<body>
+<main>
+  <p id="key-error" class="bad" hidden></p>
+
+  <label>Текст
+    <textarea id="in" rows="6" placeholder="Что зашифровать"></textarea>
+  </label>
+  <button id="go" class="primary">Зашифровать</button>
+
+  <div id="result" hidden>
+    <p id="check" class="check-line"></p>
+    <label>Шифротекст
+      <textarea id="out" rows="5" readonly></textarea>
+    </label>
+    <div class="row">
+      <button id="copy">Копировать</button>
+      <button id="share" hidden>Отправить в чат</button>
+    </div>
+  </div>
+
+  <p class="hint">Открытый ключ: <code id="pk-short"></code></p>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
